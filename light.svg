@@ -1,0 +1,337 @@
+<svg width="1180" height="610" viewBox="0 0 1180 610" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient for canvas -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    
+    <!-- Panel background -->
+    <linearGradient id="panelGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0.7"/>
+    </linearGradient>
+    
+    <!-- Accent gradient for ASCII and text -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    
+    <!-- Animated gradient for ASCII -->
+    <linearGradient id="animatedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB">
+        <animate attributeName="stop-color" values="#2563EB;#06B6D4;#10B981;#2563EB" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#06B6D4">
+        <animate attributeName="stop-color" values="#06B6D4;#10B981;#2563EB;#06B6D4" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#10B981">
+        <animate attributeName="stop-color" values="#10B981;#2563EB;#06B6D4;#10B981" dur="12s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#2563EB" flood-opacity="0.2"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#06B6D4" flood-opacity="0.15"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#10B981" flood-opacity="0.1"/>
+    </filter>
+    
+    <!-- Noise texture -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+    </filter>
+    
+    <!-- Glassmorphism background blur -->
+    <filter id="glassBlur">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k1="0" k2="1" k3="0" k4="0"/>
+    </filter>
+    
+    <!-- Mask for rounded corners -->
+    <clipPath id="roundedCorners">
+      <rect width="1180" height="610" rx="20" ry="20"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1180" height="610" rx="20" ry="20" fill="url(#bgGradient)"/>
+  
+  <!-- Noise overlay -->
+  <rect width="1180" height="610" rx="20" ry="20" fill="black" opacity="0.01" filter="url(#noise)"/>
+  
+  <!-- Floating radial gradients background -->
+  <g>
+    <circle cx="200" cy="150" r="100" fill="url(#accentGradient)" opacity="0.03">
+      <animateTransform attributeName="transform" type="translate" dur="20s" repeatCount="indefinite" values="0,0; 30,20; -20,10; 0,0"/>
+    </circle>
+    <circle cx="900" cy="400" r="80" fill="url(#accentGradient)" opacity="0.02">
+      <animateTransform attributeName="transform" type="translate" dur="25s" repeatCount="indefinite" values="0,0; -20,15; 10,-10; 0,0"/>
+    </circle>
+    <circle cx="500" cy="500" r="120" fill="url(#accentGradient)" opacity="0.015">
+      <animateTransform attributeName="transform" type="translate" dur="30s" repeatCount="indefinite" values="0,0; 15,-20; -10,10; 0,0"/>
+    </circle>
+  </g>
+  
+  <!-- Left panel -->
+  <g clip-path="url(#roundedCorners)" transform="translate(30,30)">
+    <rect width="426" height="550" rx="10" ry="10" fill="url(#panelGradient)"/>
+    
+    <!-- ASCII Art Container -->
+    <g transform="translate(30,40)">
+      <!-- ASCII Art Placeholder -->
+      <text id="ascii-art" font-family="monospace" font-size="16" line-height="1.4" letter-spacing="-0.5">
+        <!-- Animated gradient fill -->
+        <animate attributeName="fill" values="url(#accentGradient);url(#accentGradient);url(#accentGradient)" dur="3s" repeatCount="indefinite"/>
+        <!-- Line-by-line reveal -->
+        <animate attributeName="opacity" values="0;0.2;0.4;0.6;0.8;1" dur="3s" repeatCount="indefinite" keyTimes="0;0.2;0.4;0.6;0.8;1"/>
+        <!-- Typing animation simulation -->
+        <animate attributeName="textLength" values="0;50;100;150;200;250;300;350;400" dur="4s" repeatCount="indefinite"/>
+        <!-- Scanline effect -->
+        <animate attributeName="y" values="0;0;0;0;0;0;0;0;0;0;0;0" dur="0.1s" repeatCount="indefinite" keyTimes="0;0.1;0.2;0.3;0.4;0.5;0.6;0.7;0.8;0.9;1;1" values="0;1;0;1;0;1;0;1;0;1;0;1"/>
+        <!-- Content -->
+        ███╗   ███╗ █████╗ ███╗   ██╗██╗   ██╗██╗███╗   ██╗ ██████╗ 
+        ████╗ ████║██╔══██╗████╗  ██║██║   ██║██║████╗  ██║██╔═══██╗
+        ██╔████╔██║███████║██╔██╗ ██║██║   ██║██║██╔██╗ ██║██║   ██║
+        ██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║██║██║╚██╗██║██║   ██║
+        ██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝██║██║ ╚████║╚██████╔╝
+        ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+      </text>
+      
+      <!-- Typing cursor -->
+      <text x="0" y="20" font-family="monospace" font-size="16" fill="#06B6D4">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="dx" values="0;10;0" dur="1s" repeatCount="indefinite"/>
+      </text>
+    </g>
+  </g>
+  
+  <!-- Right panel -->
+  <g clip-path="url(#roundedCorners)" transform="translate(486,30)">
+    <rect width="694" height="550" rx="10" ry="10" fill="url(#panelGradient)"/>
+    
+    <!-- Terminal content -->
+    <g transform="translate(30,40)">
+      <!-- Greeting -->
+      <text x="0" y="20" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="24" fill="#0F172A" opacity="0">
+        Hi 👋
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0s" fill="freeze"/>
+        <animate attributeName="x" values="-10;0" dur="0.5s" begin="0s" fill="freeze"/>
+      </text>
+      
+      <text x="0" y="50" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="24" fill="#0F172A" opacity="0">
+        I'm Vishnu
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.5s" fill="freeze"/>
+        <animate attributeName="x" values="-10;0" dur="0.5s" begin="0.5s" fill="freeze"/>
+      </text>
+      
+      <!-- Animated typing text -->
+      <text x="0" y="90" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="20" fill="#06B6D4" opacity="0">
+        Frontend Engineer
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze"/>
+        <!-- Typing animation -->
+        <animate attributeName="textLength" values="0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17" dur="2s" begin="1s" fill="freeze"/>
+      </text>
+      
+      <text x="0" y="120" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="20" fill="#06B6D4" opacity="0">
+        Full Stack Developer
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="3s" fill="freeze"/>
+        <animate attributeName="textLength" values="0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20" dur="2s" begin="3s" fill="freeze"/>
+      </text>
+      
+      <text x="0" y="150" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="20" fill="#06B6D4" opacity="0">
+        Open Source Contributor
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="5s" fill="freeze"/>
+        <animate attributeName="textLength" values="0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24" dur="2.5s" begin="5s" fill="freeze"/>
+      </text>
+      
+      <!-- Info section -->
+      <text x="0" y="200" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="16" fill="#475569" opacity="0">
+        📍 Location: Kochi, India
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="7s" fill="freeze"/>
+      </text>
+      
+      <text x="0" y="230" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="16" fill="#475569" opacity="0">
+        🎓 Education: B.Tech in Computer Science
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="7.5s" fill="freeze"/>
+      </text>
+      
+      <text x="0" y="260" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="16" fill="#475569" opacity="0">
+        🔬 Current Focus: Web3 & AI Applications
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="8s" fill="freeze"/>
+      </text>
+      
+      <text x="0" y="290" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="16" fill="#475569" opacity="0">
+        💼 Portfolio: vishnu.dev
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="8.5s" fill="freeze"/>
+      </text>
+      
+      <text x="0" y="320" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="16" fill="#475569" opacity="0">
+        ✉️ Email: vishnu@example.com
+        <animate attributeName="opacity" values="0;1" dur="0.5s" begin="9s" fill="freeze"/>
+      </text>
+      
+      <!-- Skills section -->
+      <g transform="translate(0,360)">
+        <text x="0" y="0" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="18" fill="#0F172A" opacity="0">
+          Skills
+          <animate attributeName="opacity" values="0;1" dur="0.5s" begin="9.5s" fill="freeze"/>
+        </text>
+        
+        <!-- Skill pills -->
+        <g transform="translate(0,25)">
+          <!-- React -->
+          <rect x="0" y="0" width="80" height="28" rx="14" fill="url(#accentGradient)" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="10s" fill="freeze"/>
+            <animate attributeName="width" values="0;80" dur="0.5s" begin="10s" fill="freeze"/>
+          </rect>
+          <text x="10" y="19" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="14" fill="#0F172A" opacity="0">
+            React
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="10s" fill="freeze"/>
+          </text>
+          
+          <!-- Next.js -->
+          <rect x="90" y="0" width="80" height="28" rx="14" fill="url(#accentGradient)" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="10.5s" fill="freeze"/>
+            <animate attributeName="width" values="0;80" dur="0.5s" begin="10.5s" fill="freeze"/>
+          </rect>
+          <text x="100" y="19" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="14" fill="#0F172A" opacity="0">
+            Next.js
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="10.5s" fill="freeze"/>
+          </text>
+          
+          <!-- Node.js -->
+          <rect x="180" y="0" width="80" height="28" rx="14" fill="url(#accentGradient)" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="11s" fill="freeze"/>
+            <animate attributeName="width" values="0;80" dur="0.5s" begin="11s" fill="freeze"/>
+          </rect>
+          <text x="190" y="19" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="14" fill="#0F172A" opacity="0">
+            Node.js
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="11s" fill="freeze"/>
+          </text>
+          
+          <!-- TypeScript -->
+          <rect x="270" y="0" width="80" height="28" rx="14" fill="url(#accentGradient)" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="11.5s" fill="freeze"/>
+            <animate attributeName="width" values="0;80" dur="0.5s" begin="11.5s" fill="freeze"/>
+          </rect>
+          <text x="280" y="19" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="14" fill="#0F172A" opacity="0">
+            TypeScript
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="11.5s" fill="freeze"/>
+          </text>
+          
+          <!-- Tailwind -->
+          <rect x="360" y="0" width="80" height="28" rx="14" fill="url(#accentGradient)" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="12s" fill="freeze"/>
+            <animate attributeName="width" values="0;80" dur="0.5s" begin="12s" fill="freeze"/>
+          </rect>
+          <text x="370" y="19" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="14" fill="#0F172A" opacity="0">
+            Tailwind
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="12s" fill="freeze"/>
+          </text>
+          
+          <!-- Python -->
+          <rect x="450" y="0" width="80" height="28" rx="14" fill="url(#accentGradient)" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="12.5s" fill="freeze"/>
+            <animate attributeName="width" values="0;80" dur="0.5s" begin="12.5s" fill="freeze"/>
+          </rect>
+          <text x="460" y="19" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="14" fill="#0F172A" opacity="0">
+            Python
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="12.5s" fill="freeze"/>
+          </text>
+          
+          <!-- Docker -->
+          <rect x="540" y="0" width="80" height="28" rx="14" fill="url(#accentGradient)" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="13s" fill="freeze"/>
+            <animate attributeName="width" values="0;80" dur="0.5s" begin="13s" fill="freeze"/>
+          </rect>
+          <text x="550" y="19" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="14" fill="#0F172A" opacity="0">
+            Docker
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="13s" fill="freeze"/>
+          </text>
+          
+          <!-- Postgres -->
+          <rect x="630" y="0" width="80" height="28" rx="14" fill="url(#accentGradient)" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="13.5s" fill="freeze"/>
+            <animate attributeName="width" values="0;80" dur="0.5s" begin="13.5s" fill="freeze"/>
+          </rect>
+          <text x="640" y="19" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="14" fill="#0F172A" opacity="0">
+            Postgres
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="13.5s" fill="freeze"/>
+          </text>
+        </g>
+      </g>
+      
+      <!-- Social icons -->
+      <g transform="translate(0,480)">
+        <text x="0" y="0" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="18" fill="#0F172A" opacity="0">
+          Connect
+          <animate attributeName="opacity" values="0;1" dur="0.5s" begin="14s" fill="freeze"/>
+        </text>
+        
+        <g transform="translate(0,25)">
+          <!-- GitHub -->
+          <circle cx="0" cy="0" r="20" fill="#2563EB" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="14.5s" fill="freeze"/>
+            <animate attributeName="r" values="0;20" dur="0.5s" begin="14.5s" fill="freeze"/>
+          </circle>
+          <text x="-8" y="5" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="16" fill="#0F172A" opacity="0">
+            Github
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="14.5s" fill="freeze"/>
+          </text>
+          
+          <!-- LinkedIn -->
+          <circle cx="60" cy="0" r="20" fill="#2563EB" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="15s" fill="freeze"/>
+            <animate attributeName="r" values="0;20" dur="0.5s" begin="15s" fill="freeze"/>
+          </circle>
+          <text x="52" y="5" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="16" fill="#0F172A" opacity="0">
+            LinkedIn
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="15s" fill="freeze"/>
+          </text>
+          
+          <!-- Twitter -->
+          <circle cx="120" cy="0" r="20" fill="#2563EB" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="15.5s" fill="freeze"/>
+            <animate attributeName="r" values="0;20" dur="0.5s" begin="15.5s" fill="freeze"/>
+          </circle>
+          <text x="112" y="5" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="16" fill="#0F172A" opacity="0">
+            Twitter
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="15.5s" fill="freeze"/>
+          </text>
+          
+          <!-- Portfolio -->
+          <circle cx="180" cy="0" r="20" fill="#2563EB" opacity="0.15">
+            <animate attributeName="opacity" values="0;0.15" dur="0.5s" begin="16s" fill="freeze"/>
+            <animate attributeName="r" values="0;20" dur="0.5s" begin="16s" fill="freeze"/>
+          </circle>
+          <text x="172" y="5" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="16" fill="#0F172A" opacity="0">
+            Portfolio
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="16s" fill="freeze"/>
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Moving scanline -->
+  <rect width="1180" height="2" y="0" fill="#06B6D4" opacity="0.2">
+    <animateTransform attributeName="transform" type="translate" dur="3s" repeatCount="indefinite" values="0,0; 0,610; 0,0"/>
+  </rect>
+  
+  <!-- Floating particles -->
+  <g>
+    <circle cx="100" cy="100" r="2" fill="#06B6D4" opacity="0.3">
+      <animateTransform attributeName="transform" type="translate" dur="5s" repeatCount="indefinite" values="0,0; 20,30; -10,20; 0,0"/>
+      <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="200" r="1.5" fill="#2563EB" opacity="0.25">
+      <animateTransform attributeName="transform" type="translate" dur="4s" repeatCount="indefinite" values="0,0; -15,25; 10,-15; 0,0"/>
+      <animate attributeName="opacity" values="0.25;0;0.25" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="400" r="2.5" fill="#10B981" opacity="0.2">
+      <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" values="0,0; 10,-20; -15,10; 0,0"/>
+      <animate attributeName="opacity" values="0.2;0;0.2" dur="4s" repeatCount="indefinite"/>
+    </circle>
